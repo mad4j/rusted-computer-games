@@ -1,6 +1,4 @@
-/// REMARKABLE PROGRAM BY DAVID AHL
-/// original code:
-///     https://www.atariarchives.org/basicgames/showpage.php?page=146
+/// Sine Wave
 fn main() {
     println!(
         r#"

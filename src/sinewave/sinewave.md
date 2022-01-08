@@ -11,3 +11,6 @@ Did you ever go to a computer show and see a bunch of CRT terminals just sitting
 {{#include sinewave.rs}}
 ```
 
+original code:
+
+ * https://www.atariarchives.org/basicgames/showpage.php?page=146

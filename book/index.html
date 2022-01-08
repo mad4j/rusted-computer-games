@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Sine Wave - Rusted Computer Games</title>
+        <title>Poetry - Rusted Computer Games</title>
 
 
         <!-- Custom HTML head -->
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="sinewave/sinewave.html"><strong aria-hidden="true">1.</strong> Sine Wave</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="poetry/poetry.html"><strong aria-hidden="true">1.</strong> Poetry</a></li><li class="chapter-item expanded "><a href="sinewave/sinewave.html"><strong aria-hidden="true">2.</strong> Sine Wave</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -142,54 +142,38 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="sine-wave"><a class="header" href="#sine-wave">Sine Wave</a></h1>
-<p>Did you ever go to a computer show and see a bunch of CRT terminals just sitting there waiting forlornly for someone to give a demo on them. It was one of those moments when I was at DEC that I decided there should be a little bit of background activity. And why not plot with words instead of the usual X’s? Thus SINE WAVE was born and lives on in dozens on different versions. At least those CRTs don’t look so lifeless anymore.</p>
-<pre><code>10 PRINT TAB(30);&quot;SINE WAVE&quot;
-20 PRINT TAB(15);&quot;CREATIVE COMPUTING  MORRISTOWN, NEW JERSEY&quot;
-30 PRINT: PRINT: PRINT: PRINT: PRINT
-40 REMARKABLE PROGRAM BY DAVID AHL
-50 B=0
-100 REM  START LONG LOOP
-110 FOR T=0 TO 40 STEP .25
-120 A=INT(26+25*SIN(T))
-130 PRINT TAB(A);
-140 IF B=1 THEN 180
-150 PRINT &quot;CREATIVE&quot;
-160 B=1
-170 GOTO 200
-180 PRINT &quot;COMPUTING&quot;
-190 B=0
-200 NEXT T
-999 END
+                        <h1 id="poetry"><a class="header" href="#poetry">Poetry</a></h1>
+<p>This program produces random verse which might loosely be considered in the Japanese Haiku style. It uses 20 phrases in four groups of five phrases each and generally cycles through the groups in order. It inserts commas (random — 19% of the time), indentation (random — 22% of the time), and starts new paragraphs (18% probability but at least once every 20 phrases).</p>
+<p>The phrases in POETRY are somewhat suggestive of Edgar Allen Poe. Try it with phrases from computer technology, from love and romance, from four-year-old children, or from some other project. Send us the output.</p>
+<p>Here are some phrases from nature to try:</p>
+<pre><code class="language-plaintext">Carpet of ferns     Mighty Oaks
+Morning dew         Grace and beauty
+Tang of dawn        Silently singing
+Swaying pines       Nature speaking
+
+Entrances me        Untouched, unspoiled
+Soothing me         Shades of green
+Rustling leaves     Tranquility
+Radiates calm       …so peaceful
 </code></pre>
-<pre><pre class="playground"><code class="language-rust">/// REMARKABLE PROGRAM BY DAVID AHL
-/// original code:
-///     https://www.atariarchives.org/basicgames/showpage.php?page=146
-fn main() {
-    println!(
-        r#&quot;
-              SINE WAVE
-        RUSTED COMPUTER GAMES
-
-        &quot;#
-    );
-
-    for t in 0..160 {
-        let n = 26f32 + 25f32 * (0.25 * t as f32).sin();
-        println!(
-            &quot;{}{}&quot;,
-            &quot; &quot;.repeat(n as usize),
-            [ &quot;CREATIVE&quot;, &quot;COMPUTING&quot; ][t % 2]
-        );
-    }
-}
-</code></pre></pre>
+<p>The original author of this program is unknown. It was modified and reworked by Jim Bailey, Peggy Ewing, and Dave Ahl at DEC.</p>
+<hr />
+<p>As published in Basic Computer Games (1978):</p>
+<ul>
+<li><a href="https://www.atariarchives.org/basicgames/showpage.php?page=128">Atari Archives</a></li>
+<li><a href="https://annarchive.com/files/Basic_Computer_Games_Microcomputer_Edition.pdf#page=143">Annarchive</a></li>
+</ul>
+<p>Downloaded from Vintage Basic at
+http://www.vintage-basic.net/games.html</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
 
+                            <a rel="next" href="sinewave/sinewave.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -198,6 +182,9 @@ fn main() {
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
 
+                    <a rel="next" href="sinewave/sinewave.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>
