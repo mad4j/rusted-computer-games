@@ -1,0 +1,6 @@
+[book]
+authors = ["Daniele Olmisani"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Rusted Computer Games"
