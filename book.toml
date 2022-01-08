@@ -2,5 +2,12 @@
 authors = ["Daniele Olmisani"]
 language = "en"
 multilingual = false
-src = "src"
+src = "chapters"
 title = "Rusted Computer Games"
+description = "Porting of BASIC Computer Games in Rust."
+
+[build]
+build-dir = "docs"
+
+[output.html]
+default-theme = "coal"

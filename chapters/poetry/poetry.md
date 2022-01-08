@@ -20,6 +20,10 @@ Radiates calm       …so peaceful
 
 The original author of this program is unknown. It was modified and reworked by Jim Bailey, Peggy Ewing, and Dave Ahl at DEC.
 
+```plaintext
+{{#include poetry.bas}}
+```
+
 ---
 
 As published in Basic Computer Games (1978):

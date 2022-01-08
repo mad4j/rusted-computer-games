@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="sidebar-visible no-js coal">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -9,7 +9,7 @@
         <!-- Custom HTML head -->
         
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="">
+        <meta name="description" content="Porting of BASIC Computer Games in Rust.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -36,7 +36,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "coal";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -62,7 +62,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('light')
+            html.classList.remove('coal')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -99,9 +99,9 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal (default)</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
@@ -157,6 +157,49 @@ Rustling leaves     Tranquility
 Radiates calm       …so peaceful
 </code></pre>
 <p>The original author of this program is unknown. It was modified and reworked by Jim Bailey, Peggy Ewing, and Dave Ahl at DEC.</p>
+<pre><code class="language-plaintext">10 PRINT TAB(30);&quot;POETRY&quot;
+20 PRINT TAB(15);&quot;CREATIVE COMPUTING  MORRISTOWN, NEW JERSEY&quot;
+30 PRINT:PRINT:PRINT
+90 ON I GOTO 100,101,102,103,104
+100 PRINT &quot;MIDNIGHT DREARY&quot;;:GOTO 210
+101 PRINT &quot;FIERY EYES&quot;;:GOTO 210
+102 PRINT &quot;BIRD OR FIEND&quot;;:GOTO 210
+103 PRINT &quot;THING OF EVIL&quot;;:GOTO 210
+104 PRINT &quot;PROPHET&quot;;:GOTO 210
+110 ON I GOTO 111,112,113,114,115
+111 PRINT &quot;BEGUILING ME&quot;;:U=2:GOTO 210
+112 PRINT &quot;THRILLED ME&quot;;:GOTO 210
+113 PRINT &quot;STILL SITTING....&quot;;:GOTO 212
+114 PRINT &quot;NEVER FLITTING&quot;;:U=2:GOTO 210
+115 PRINT &quot;BURNED&quot;;:GOTO 210
+120 ON I GOTO 121,122,123,124,125
+121 PRINT &quot;AND MY SOUL&quot;;:GOTO 210
+122 PRINT &quot;DARKNESS THERE&quot;;:GOTO 210
+123 PRINT &quot;SHALL BE LIFTED&quot;;:GOTO 210
+124 PRINT &quot;QUOTH THE RAVEN&quot;;:GOTO 210
+125 IF U=0 THEN 210
+126 PRINT &quot;SIGN OF PARTING&quot;;:GOTO 210
+130 ON I GOTO 131,132,133,134,135
+131 PRINT &quot;NOTHING MORE&quot;;:GOTO 210
+132 PRINT &quot;YET AGAIN&quot;;:GOTO 210
+133 PRINT &quot;SLOWLY CREEPING&quot;;:GOTO 210
+134 PRINT &quot;...EVERMORE&quot;;:GOTO 210
+135 PRINT &quot;NEVERMORE&quot;;
+210 IF U=0 OR RND(1)&gt;.19 THEN 212
+211 PRINT &quot;,&quot;;:U=2
+212 IF RND(1)&gt;.65 THEN 214
+213 PRINT &quot; &quot;;:U=U+1:GOTO 215
+214 PRINT : U=0
+215 I=INT(INT(10*RND(1))/2)+1
+220 J=J+1 : K=K+1
+230 IF U&gt;0 OR INT(J/2)&lt;&gt;J/2 THEN 240
+235 PRINT &quot;     &quot;;
+240 ON J GOTO 90,110,120,130,250
+250 J=0 : PRINT : IF K&gt;20 THEN 270
+260 GOTO 215
+270 PRINT : U=0 : K=0 : GOTO 110
+999 END
+</code></pre>
 <hr />
 <p>As published in Basic Computer Games (1978):</p>
 <ul>
@@ -189,20 +232,6 @@ http://www.vintage-basic.net/games.html</p>
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:3000/__livereload");
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 

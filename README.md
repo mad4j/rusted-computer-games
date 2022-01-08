@@ -4,3 +4,5 @@ porting of BASIC Computer Games in Rust
 
 ## References
 * https://github.com/coding-horror/basic-computer-games
+## Build command
+mdbook build --open
