@@ -1,4 +1,3 @@
-/// Sine Wave
 fn main() {
     println!(
         r#"
@@ -13,7 +12,7 @@ fn main() {
         println!(
             "{}{}",
             " ".repeat(n as usize),
-            [ "CREATIVE", "COMPUTING" ][t % 2]
+            ["CREATIVE", "COMPUTING"][t % 2]
         );
     }
 }

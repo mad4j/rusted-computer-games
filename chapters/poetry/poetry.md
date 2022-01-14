@@ -32,4 +32,4 @@ As published in Basic Computer Games (1978):
 - [Annarchive](https://annarchive.com/files/Basic_Computer_Games_Microcomputer_Edition.pdf#page=143)
 
 Downloaded from Vintage Basic at
-http://www.vintage-basic.net/games.html
+<http://www.vintage-basic.net/games.html>
