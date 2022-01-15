@@ -16,6 +16,7 @@
  * 4096 is EOF
  */
 
+// values from original BUNNY DATA statements
 #[rustfmt::skip]
 const DATA: [i32; 233] = [
     2,21,14,14,25,
@@ -36,34 +37,60 @@ const DATA: [i32; 233] = [
 ];
 
 fn main() {
+    // retrieve word letters from DATA array
     let mut bunny: [char; 5] = [' '; 5];
     for i in 0..5 {
         bunny[i] = char::from_u32(64 + DATA[i] as u32).unwrap_or_default();
     }
 
+    // shadow with an immutable declaration
+    let bunny: [char; 5] = bunny;
+
+    // current cursor position
     let mut pos = 0;
+
+    // number of processed lines
     let mut lines = 0;
+
+    // current index of DATA value to be processed
+    // first five values to be skipped
     let mut index = 5;
 
-    while DATA[index] < 128 {
+    // loop until end of data reached
+    while DATA[index] < 64 {
+
+        // current value to be processed
         let x = DATA[index];
 
+        // verify if current value is an end of line
         if x < 0 {
-            println!("");
+
+            // print an end of line
+            println!();
+
+            // update current position
             pos = 0;
+
+            // update number of processed lines
             lines += 1;
+
+        // otherwise draw bunny shape
         } else {
+
+            // verify if a letter needed to be rendered
             if (index - lines) % 2 == 0 {
                 while pos <= x {
                     print!("{}", bunny[(pos % 5) as usize]);
                     pos += 1;
                 }
+            // otherwise render white spaces
             } else {
                 print!("{}", " ".repeat((x - pos) as usize));
                 pos = x;
             };
         }
 
+        // update current index of DATA values
         index += 1;
     }
 }
