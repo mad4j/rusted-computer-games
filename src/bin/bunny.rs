@@ -15,6 +15,8 @@
  * and so on.
  * 4096 is EOF
  */
+
+#[rustfmt::skip]
 const DATA: [i32; 233] = [
     2,21,14,14,25,
     1,2,-1,0,2,45,50,-1,0,5,43,52,-1,0,7,41,52,-1,
@@ -34,23 +36,34 @@ const DATA: [i32; 233] = [
 ];
 
 fn main() {
+    let mut bunny: [char; 5] = [' '; 5];
+    for i in 0..5 {
+        bunny[i] = char::from_u32(64 + DATA[i] as u32).unwrap_or_default();
+    }
 
-    let mut index = 5;
     let mut pos = 0;
+    let mut lines = 0;
+    let mut index = 5;
+
     while DATA[index] < 128 {
-        if DATA[index] < 0 {
-            println!();
-            index += 1;
+        let x = DATA[index];
+
+        if x < 0 {
+            println!("");
             pos = 0;
+            lines += 1;
         } else {
-            let x = DATA[index];
-            let y = DATA[index+1];
-            index += 2;
-            print!("{}", " ".repeat((x-pos) as usize));
-            for j in x..=y {
-                print!("{}", char::from_u32(64+ DATA[j as usize %5] as u32).unwrap_or(' '));
-            }
-            pos = y;
-        }       
+            if (index - lines) % 2 == 0 {
+                while pos <= x {
+                    print!("{}", bunny[(pos % 5) as usize]);
+                    pos += 1;
+                }
+            } else {
+                print!("{}", " ".repeat((x - pos) as usize));
+                pos = x;
+            };
+        }
+
+        index += 1;
     }
 }
