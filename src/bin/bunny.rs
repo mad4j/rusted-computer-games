@@ -58,13 +58,11 @@ fn main() {
 
     // loop until end of data reached
     while DATA[index] < 64 {
-
         // current value to be processed
         let x = DATA[index];
 
         // verify if current value is an end of line
         if x < 0 {
-
             // print an end of line
             println!();
 
@@ -76,7 +74,6 @@ fn main() {
 
         // otherwise draw bunny shape
         } else {
-
             // verify if a letter needed to be rendered
             if (index - lines) % 2 == 0 {
                 while pos <= x {
